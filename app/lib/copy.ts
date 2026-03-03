@@ -13,8 +13,14 @@ export const copy = {
     headline: "The First Tap-Trading App for Memecoins.",
     subheadline:
       "Memecoins move at the speed of culture. Your trading app should too. One tap to buy, one swipe to sell. No friction, no waiting.",
-    iosButton: "Download for iOS",
-    androidButton: "Download for Android",
+    iosButton: {
+      label: "Download for iOS",
+      href: "https://apps.apple.com/app/jeli/YOUR_APP_ID",
+    },
+    androidButton: {
+      label: "Download for Android",
+      href: "https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME",
+    },
   },
 
   narrative: {

@@ -17,16 +17,6 @@
   --tertiary: #a855f7;
 }
 
-[data-theme="dark"] {
-  --bg: #080510;
-  --fg: #ffffff;
-  --surface: #151525;
-  --border: rgba(255, 255, 255, 0.12);
-  --muted: rgba(255, 255, 255, 0.55);
-  --accent: #00e5ff;
-  --accentGlow: rgba(0, 229, 255, 0.35);
-}
-
 * {
   border-color: var(--border);
 }

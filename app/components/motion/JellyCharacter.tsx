@@ -10,22 +10,22 @@ export function JellyCharacter({ className }: JellyCharacterProps) {
   return (
     <div className={className}>
       <svg
-        width="120"
-        height="120"
-        viewBox="0 0 120 120"
+        width="200"
+        height="200"
+        viewBox="0 0 200 200"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="mx-auto"
       >
-        {/* Glow effect */}
+        {/* Glow effect - uses theme accent color */}
         <motion.circle
-          cx="60"
-          cy="60"
-          r="50"
+          cx="100"
+          cy="100"
+          r="80"
           fill="url(#jellyGlow)"
           animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.4, 0.6, 0.4],
+            scale: [1, 1.15, 1],
+            opacity: [0.3, 0.5, 0.3],
           }}
           transition={{
             duration: 2,
@@ -37,18 +37,19 @@ export function JellyCharacter({ className }: JellyCharacterProps) {
         {/* Main jelly body */}
         <motion.g
           animate={{
-            y: [0, -5, 0],
+            y: [0, -8, 0],
+            scale: [1, 1.02, 1],
           }}
           transition={{
-            duration: 1.5,
+            duration: 1.2,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         >
           {/* Body - cyan jelly shape */}
           <motion.path
-            d="M60 20C35 20 25 45 25 65C25 85 35 100 60 100C85 100 95 85 95 65C95 45 85 20 60 20Z"
-            fill="#00D9FF"
+            d="M100 30C55 30 40 70 40 100C40 130 55 170 100 170C145 170 160 130 160 100C160 70 145 30 100 30Z"
+            fill="var(--accent)"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -56,90 +57,95 @@ export function JellyCharacter({ className }: JellyCharacterProps) {
 
           {/* Highlight */}
           <path
-            d="M40 45C40 45 45 35 55 35C60 35 65 40 65 40"
+            d="M65 65C65 65 75 50 90 50C100 50 105 58 105 58"
             stroke="white"
-            strokeWidth="3"
+            strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
             fill="none"
-            opacity="0.8"
+            opacity="0.7"
           />
 
           {/* Left eye */}
-          <ellipse cx="45" cy="60" rx="6" ry="8" fill="white" />
-          <circle cx="45" cy="62" r="3" fill="#0B0D12" />
+          <ellipse cx="75" cy="90" rx="10" ry="14" fill="white" />
+          <circle cx="75" cy="92" r="5" fill="var(--bg)" />
 
           {/* Right eye */}
-          <ellipse cx="75" cy="60" rx="6" ry="8" fill="white" />
-          <circle cx="75" cy="62" r="3" fill="#0B0D12" />
+          <ellipse cx="125" cy="90" rx="10" ry="14" fill="white" />
+          <circle cx="125" cy="92" r="5" fill="var(--bg)" />
 
           {/* Happy mouth */}
           <path
-            d="M50 75Q60 85 70 75"
-            stroke="#0B0D12"
-            strokeWidth="3"
+            d="M85 115Q100 130 115 115"
+            stroke="var(--bg)"
+            strokeWidth="4"
             strokeLinecap="round"
             fill="none"
           />
 
-          {/* Blush left */}
-          <ellipse cx="35" cy="70" rx="5" ry="3" fill="#FF6B9D" opacity="0.5" />
+          {/* Blush left - uses secondary color */}
+          <ellipse cx="55" cy="110" rx="8" ry="5" fill="var(--secondary)" opacity="0.5" />
 
-          {/* Blush right */}
-          <ellipse cx="85" cy="70" rx="5" ry="3" fill="#FF6B9D" opacity="0.5" />
+          {/* Blush right - uses secondary color */}
+          <ellipse cx="145" cy="110" rx="8" ry="5" fill="var(--secondary)" opacity="0.5" />
         </motion.g>
 
-        {/* Small bounce shadow */}
+        {/* Shadow under the character */}
         <motion.ellipse
-          cx="60"
-          cy="105"
-          rx="20"
-          ry="4"
-          fill="#0B0D12"
-          opacity="0.2"
+          cx="100"
+          cy="175"
+          rx="35"
+          ry="6"
+          fill="var(--bg)"
+          opacity="0.15"
           animate={{
-            rx: [20, 15, 20],
-            opacity: [0.2, 0.1, 0.2],
+            rx: [35, 25, 35],
+            opacity: [0.15, 0.08, 0.15],
           }}
           transition={{
-            duration: 1.5,
+            duration: 1.2,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
 
-        {/* Sparkles */}
+        {/* Sparkle 1 */}
         <motion.g
           animate={{
             rotate: [0, 360],
+            scale: [1, 1.2, 1],
           }}
           transition={{
-            duration: 8,
+            duration: 4,
             repeat: Infinity,
             ease: "linear",
           }}
         >
-          <path d="M15 30L17 35L15 40L13 35L15 30Z" fill="#00D9FF" />
+          <path d="M25 50L30 60L25 70L20 60L25 50Z" fill="var(--accent)" />
         </motion.g>
 
+        {/* Sparkle 2 */}
         <motion.g
           animate={{
             rotate: [0, -360],
+            scale: [1, 1.3, 1],
           }}
           transition={{
-            duration: 6,
+            duration: 5,
             repeat: Infinity,
             ease: "linear",
           }}
         >
-          <path d="M105 40L107 45L105 50L103 45L105 40Z" fill="#00D9FF" />
+          <path d="M175 60L180 70L175 80L170 70L175 60Z" fill="var(--accent)" />
         </motion.g>
 
+        {/* Sparkle 3 */}
         <motion.path
-          d="M100 70L102 73L100 76L98 73L100 70Z"
-          fill="#00D9FF"
+          d="M160 130L165 138L160 146L155 138L160 130Z"
+          fill="var(--accent)"
           animate={{
             opacity: [1, 0.3, 1],
+            scale: [1, 1.2, 1],
           }}
           transition={{
             duration: 1.5,
@@ -150,9 +156,9 @@ export function JellyCharacter({ className }: JellyCharacterProps) {
 
         {/* Gradient definitions */}
         <defs>
-          <radialGradient id="jellyGlow" cx="60" cy="60" r="50">
-            <stop offset="0%" stopColor="#00D9FF" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#00D9FF" stopOpacity="0" />
+          <radialGradient id="jellyGlow" cx="100" cy="100" r="80">
+            <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="var(--accent)" stopOpacity="0" />
           </radialGradient>
         </defs>
       </svg>
