@@ -47,29 +47,6 @@ export default function Home() {
           style={{ scaleX }}
         />
         
-        {/* Arrow buttons */}
-        <button
-          onClick={() => scroll("left")}
-          disabled={!canScrollLeft}
-          className={`fixed left-4 top-1/2 -translate-y-1/2 z-40 p-3 rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-lg transition-all hover:border-[var(--accent)] disabled:opacity-30 disabled:cursor-not-allowed hidden md:flex items-center justify-center`}
-          aria-label="Scroll left"
-        >
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
-        </button>
-        
-        <button
-          onClick={() => scroll("right")}
-          disabled={!canScrollRight}
-          className={`fixed right-4 top-1/2 -translate-y-1/2 z-40 p-3 rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-lg transition-all hover:border-[var(--accent)] disabled:opacity-30 disabled:cursor-not-allowed hidden md:flex items-center justify-center`}
-          aria-label="Scroll right"
-        >
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-            <path d="M9 18l6-6-6-6" />
-          </svg>
-        </button>
-        
         {/* Horizontal scroll container */}
         <div 
           ref={scrollRef}
@@ -80,14 +57,85 @@ export default function Home() {
             WebkitOverflowScrolling: 'touch',
           }}
         >
-          <section className="min-w-[100vw] snap-center flex-shrink-0">
+          {/* Narrative Section */}
+          <section className="min-w-[100vw] snap-center flex-shrink-0 relative">
             <Narrative />
+            {/* Left arrow */}
+            <button
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              className={`absolute left-4 top-1/2 -translate-y-1/2 z-40 p-3 rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-lg transition-all hover:border-[var(--accent)] disabled:opacity-0 hidden md:flex items-center justify-center`}
+              aria-label="Previous"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            {/* Right arrow */}
+            <button
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              className={`absolute right-4 top-1/2 -translate-y-1/2 z-40 p-3 rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-lg transition-all hover:border-[var(--accent)] disabled:opacity-0 hidden md:flex items-center justify-center`}
+              aria-label="Next"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
           </section>
-          <section className="min-w-[100vw] snap-center flex-shrink-0">
+          
+          {/* Features Section */}
+          <section className="min-w-[100vw] snap-center flex-shrink-0 relative">
             <Features />
+            {/* Left arrow */}
+            <button
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              className={`absolute left-4 top-1/2 -translate-y-1/2 z-40 p-3 rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-lg transition-all hover:border-[var(--accent)] disabled:opacity-0 hidden md:flex items-center justify-center`}
+              aria-label="Previous"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            {/* Right arrow */}
+            <button
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              className={`absolute right-4 top-1/2 -translate-y-1/2 z-40 p-3 rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-lg transition-all hover:border-[var(--accent)] disabled:opacity-0 hidden md:flex items-center justify-center`}
+              aria-label="Next"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
           </section>
-          <section className="min-w-[100vw] snap-center flex-shrink-0">
+          
+          {/* HowItWorks Section */}
+          <section className="min-w-[100vw] snap-center flex-shrink-0 relative">
             <HowItWorks />
+            {/* Left arrow */}
+            <button
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              className={`absolute left-4 top-1/2 -translate-y-1/2 z-40 p-3 rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-lg transition-all hover:border-[var(--accent)] disabled:opacity-0 hidden md:flex items-center justify-center`}
+              aria-label="Previous"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            {/* Right arrow */}
+            <button
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              className={`absolute right-4 top-1/2 -translate-y-1/2 z-40 p-3 rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-lg transition-all hover:border-[var(--accent)] disabled:opacity-0 hidden md:flex items-center justify-center`}
+              aria-label="Next"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
           </section>
         </div>
       </div>
