@@ -15,7 +15,7 @@ export function Footer() {
         {/* Social Links */}
         <div className="flex items-center gap-6">
           <a
-            href="https://x.com/jeli"
+            href="https://x.com/JeloTapTrading"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--accent)] transition-colors"
@@ -26,7 +26,7 @@ export function Footer() {
             </svg>
           </a>
           <a
-            href="https://t.me/jeli"
+            href="https://t.me/jelotaptrading"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--accent)] transition-colors"

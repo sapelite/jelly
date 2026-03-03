@@ -10,7 +10,7 @@ export const copy = {
 
   hero: {
     badge: "TAP TRADING ON SOLANA",
-    headline: "Tap Faster Than the Rest.",
+    headline: "The First Tap-Trading App for Memecoins.",
     subheadline:
       "Memecoins move at the speed of culture. Your trading app should too. One tap to buy, one swipe to sell. No friction, no waiting.",
     iosButton: "Download for iOS",
