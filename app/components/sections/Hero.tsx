@@ -1,19 +1,55 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { copy } from "../../lib/copy";
 
 export function Hero() {
   const headlineWords = copy.hero.headline.split(" ");
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 md:px-12 lg:px-20 py-32">
+    <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 md:px-12 lg:px-20 py-32 relative overflow-hidden">
+      {/* Animated Logo - Big and popping */}
+      <motion.div
+        initial={{ scale: 0, opacity: 0, rotate: -180 }}
+        animate={{ scale: 1, opacity: 1, rotate: 0 }}
+        transition={{ 
+          type: "spring",
+          stiffness: 200,
+          damping: 15,
+          delay: 0.1,
+        }}
+        className="relative mb-12"
+      >
+        <motion.div
+          animate={{ 
+            y: [0, -15, 0],
+            scale: [1, 1.05, 1],
+          }}
+          transition={{ 
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="relative w-48 h-48 md:w-64 md:h-64"
+        >
+          <div className="absolute inset-0 rounded-full bg-[var(--accent)] blur-[60px] opacity-40" />
+          <Image
+            src="/logo.png"
+            alt="JELI Logo"
+            fill
+            className="object-contain z-10 drop-shadow-[0_0_40px_var(--accentGlow)]"
+            priority
+          />
+        </motion.div>
+      </motion.div>
+
       {/* Badge */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-        className="mb-10"
+        transition={{ delay: 0.3 }}
+        className="mb-8"
       >
         <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium tracking-wider uppercase bg-[var(--surface)] border border-[var(--accent)]/30 rounded-full text-[var(--accent)]">
           <span className="w-2 h-2 bg-[var(--accent)] rounded-full animate-pulse" />
@@ -80,6 +116,7 @@ export function Hero() {
       {/* Gradient orbs for atmosphere */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[var(--accent)] opacity-20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-[var(--secondary)] opacity-15 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--tertiary)] opacity-10 rounded-full blur-[150px] pointer-events-none" />
     </section>
   );
 }
