@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { copy } from "../../lib/copy";
-import { ThemeToggle } from "../ui/ThemeToggle";
 
 export function Footer() {
   return (
@@ -13,9 +12,6 @@ export function Footer() {
         viewport={{ once: true }}
         className="flex flex-col items-center gap-8"
       >
-        {/* Theme Toggle */}
-        <ThemeToggle />
-        
         {/* Social Links */}
         <div className="flex items-center gap-6">
           <a

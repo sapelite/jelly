@@ -8,7 +8,7 @@ export function Hero() {
   const headlineWords = copy.hero.headline.split(" ");
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 md:px-12 lg:px-20 py-32 relative overflow-hidden">
+    <section className="min-h-[90vh] flex flex-col justify-center items-center text-center px-6 md:px-12 lg:px-20 py-20 relative overflow-hidden">
       {/* Animated Logo - Big and popping */}
       <motion.div
         initial={{ scale: 0, opacity: 0, rotate: -180 }}
@@ -31,7 +31,7 @@ export function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="relative w-48 h-48 md:w-64 md:h-64"
+          className="relative w-32 h-32 md:w-40 md:h-40"
         >
           <div className="absolute inset-0 rounded-full bg-[var(--accent)] blur-[60px] opacity-40" />
           <Image

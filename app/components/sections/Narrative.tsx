@@ -5,7 +5,7 @@ import { copy } from "../../lib/copy";
 
 export function Narrative() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center py-32 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-transparent via-[var(--accentGlow)]/10 to-transparent">
+    <section className="min-h-[80vh] flex flex-col justify-center items-center py-16 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-transparent via-[var(--accentGlow)]/10 to-transparent">
       <div className="max-w-5xl text-center">
         {/* Title - BIGGER */}
         <motion.h2

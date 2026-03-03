@@ -5,7 +5,7 @@ import { copy } from "../../lib/copy";
 
 export function Features() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center py-32 px-6 md:px-12 lg:px-20">
+    <section className="min-h-[80vh] flex flex-col justify-center items-center py-16 px-6 md:px-12 lg:px-20">
       <div className="max-w-5xl text-center">
         {/* Title - BIGGER */}
         <motion.h2
